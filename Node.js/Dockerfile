@@ -2,7 +2,12 @@ FROM node
 MAINTAINER Nammu8395@gmail.com
 RUN        apt-get -y update
 
-RUN mkdir -p /usr/src/cloud
-COPY index.js /usr/src/cloud
+RUN mkdir -p /home/opc/cloud
+WORKDIR /home/opc/cloud
+COPY index.js /home/opc/cloud
+
+COPY package*.json ./
+RUN npm install
+
 EXPOSE 8080
-CMD [ "node", "/usr/src/cloud/index" ]
+CMD [ "node", "/home/opc/cloud/index" ]
