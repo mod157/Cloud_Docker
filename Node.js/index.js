@@ -15,6 +15,10 @@ http.createServer(function (req, res) {
     if(err) throw err;
 
     console.log('The solution is: ', rows);
-    res.end(rows.toString());
+    res.end(rows);
+    res.end(rows[0]);
+    res.end(rows[1]);
+    res.end(rows[2]);
+    res.end(rows[3]);
   });
 }).listen(8080);
