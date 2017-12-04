@@ -12,16 +12,30 @@ var connection = mysql.createConnection({
 
 var app = express();
 
-app.set('port', process.env.PORT || 8080);
+http.createServer(function (req, res) {
+  console.log("server");
+  connection.query('SELECT * from info', function(err, rows) {
+    if(err) throw err;
+
+    console.log('The solution is: ', rows);
+    res.send(rows);
+  });
+
+  res.writeHead(200, { 'Content-Type' : 'text/plain' });
+  res.end('Hello World');
+}).listen(8080);
+
+/*app.set('port', process.env.PORT || 8080);
 app.get('/', function(req, res){
   res.send('Hello World');
   connection.query('SELECT * from info', function(err, rows) {
     if(err) throw err;
 
+    console.log('The solution is: ', rows);
     res.send(rows);
   });
 });
 
 app.listen(app.get('port'), function () {
-  res.send('Express server listening on port ' + app.get('port'));
-});
+  console.log('Express server listening on port ' + app.get('port'));
+});*/
