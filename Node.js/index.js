@@ -21,7 +21,8 @@ app.get("/",function(request,response){
 connection.query('SELECT * from info', function(err, rows, fields) {
 connection.end();
   if (!err){
-    response.send(rows, fields);
+    response.send(rows);
+    response.send(fields);
   }
   else
     console.log('Error while performing Query.');
