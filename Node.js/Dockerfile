@@ -3,6 +3,7 @@ MAINTAINER Nammu8395@gmail.com
 RUN        apt-get -y update
 
 RUN mkdir -p /usr/src/cloud
+RUN cd /usr/src/cloud
 WORKDIR /usr/src/cloud
 COPY index.js /usr/src/cloud
 
