@@ -6,7 +6,6 @@ RUN mkdir -p /home/opc/cloud
 WORKDIR /home/opc/cloud
 COPY index.js /home/opc/cloud
 
-COPY package*.json ./
 RUN npm install
 
 EXPOSE 8080
