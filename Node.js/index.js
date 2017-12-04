@@ -29,14 +29,3 @@ connection.end();
 });
 
 app.listen(8080);
-
-function JSONtoString(object) {
-    var results = [];
-    for (var property in object) {
-        var value = object[property];
-        if (value)
-        results.push(value + "");
-      }
-
-        return results.join(', ');
-}
