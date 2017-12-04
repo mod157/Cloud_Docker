@@ -1,4 +1,3 @@
-//17.12.04 Nammu
 FROM node
 MAINTAINER Nammu8395@gmail.com
 RUN        apt-get -y update
