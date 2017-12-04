@@ -2,7 +2,7 @@ FROM node
 MAINTAINER Nammu8395@gmail.com
 RUN        apt-get -y update
 
-RUN mkdir -p /var/www/html/Cloud
-COPY index.js /var/www/html/Cloud
+RUN mkdir -p /usr/src/cloud
+COPY index.js /usr/src/cloud
 EXPOSE 8080
-CMD [ "node", "/var/www/html/Cloud/index" ]
+CMD [ "node", "/usr/src/cloud/index" ]
