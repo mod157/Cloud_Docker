@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
   database : 'Profile'
 });
 
-
 http.createServer(function (req, res) {
   console.log("server");
   connection.query('SELECT * from info', function(err, rows) {
@@ -18,7 +17,4 @@ http.createServer(function (req, res) {
     console.log('The solution is: ', rows);
     res.end(rows);
   });
-
-  res.writeHead(200, { 'Content-Type' : 'text/plain' });
-  res.end('Hello World');
 }).listen(8080);
