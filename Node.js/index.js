@@ -1,5 +1,5 @@
 var http = require('http');
-var express = require('express');
+//var express = require('express');
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   database : 'Profile'
 });
 
-var app = express();
+//var app = express();
 
 http.createServer(function (req, res) {
   console.log("server");
