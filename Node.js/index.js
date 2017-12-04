@@ -1,4 +1,4 @@
-var http = require('http');
+var express = require("express");
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -8,17 +8,25 @@ var connection = mysql.createConnection({
   port     : 3306,
   database : 'Profile'
 });
+var app = express();
+connection.connect(function(err){
+if(!err) {
+    console.log("Database is connected ... \n\n");
+} else {
+    console.log("Error connecting database ... \n\n");
+}
+});
 
-http.createServer(function (req, res) {
-  console.log("server");
-  connection.query('SELECT * from info', function(err, rows) {
-    if(err) throw err;
-
+app.get("/",function(request,response){
+connection.query('SELECT * from Person', function(err, rows, fields) {
+connection.end();
+  if (!err){
+    response.send(rows);
     console.log('The solution is: ', rows);
-    res.end(rows);
-    res.end(rows[0]);
-    res.end(rows[1]);
-    res.end(rows[2]);
-    res.end(rows[3]);
+  }
+  else
+    console.log('Error while performing Query.');
   });
-}).listen(8080);
+});
+
+app.listen(8080);
