@@ -18,7 +18,7 @@ if(!err) {
 });
 
 app.get("/",function(request,response){
-connection.query('SELECT * from Person', function(err, rows, fields) {
+connection.query('SELECT * from info', function(err, rows, fields) {
 connection.end();
   if (!err){
     response.send(rows);
