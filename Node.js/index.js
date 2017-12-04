@@ -21,7 +21,7 @@ app.get("/",function(request,response){
 connection.query('SELECT * from info', function(err, rows, fields) {
 connection.end();
   if (!err){
-    response.send(JSONtoString(rows));
+    response.send(JSONtoString(rows).toString());
     console.log('The solution is: ', rows);
   }
   else
