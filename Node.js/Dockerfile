@@ -9,7 +9,6 @@ COPY package.json /usr/src/cloud
 RUN cd /usr/src/cloud
 WORKDIR /usr/src/cloud
 
-
 RUN npm install
 
 EXPOSE 8080
