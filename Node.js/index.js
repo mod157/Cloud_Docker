@@ -17,7 +17,7 @@ http.createServer(function (req, res) {
   res.end('Hello World');
 }).listen(8080);
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 8080);/*
 app.get('/', function(req, res){
   connection.query('SELECT * from info', function(err, rows) {
     if(err) throw err;
@@ -25,7 +25,7 @@ app.get('/', function(req, res){
     console.log('The solution is: ', rows);
     res.send(rows);
   });
-});
+});*/
 
 app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
