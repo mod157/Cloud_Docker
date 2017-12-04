@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
     if(err) throw err;
 
     console.log('The solution is: ', rows);
-    res.send(rows);
+    res.end(rows);
   });
 
   res.writeHead(200, { 'Content-Type' : 'text/plain' });
