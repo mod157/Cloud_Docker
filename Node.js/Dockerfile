@@ -8,5 +8,5 @@ COPY index.js /home/opc/cloud
 
 RUN npm install
 
-EXPOSE 8080
+EXPOSE 8080, 9999
 CMD [ "node", "/home/opc/cloud/index" ]
