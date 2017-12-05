@@ -8,7 +8,4 @@ ENV MYSQL_DATABASE="Profile"
 ENV MYSQL_USER='Lee'
 ENV MYSQL_PASSWORD="32121849"
 
-RUN rm /etc/my.cnf
-COPY my.cnf /etc/my.cnf
-
 EXPOSE 3306
