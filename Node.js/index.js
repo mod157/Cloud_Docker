@@ -1,3 +1,5 @@
+/*17.12.04 nammu*/
+
 var express = require("express");
 var mysql = require('mysql');
 
@@ -11,20 +13,20 @@ var connection = mysql.createConnection({
 var app = express();
 connection.connect(function(err){
 if(!err) {
-    console.log("Database is connected ... \n\n");
+    console.log("Database is connected\n");
 } else {
-    console.log("Error connecting database ... \n\n");
+    console.log("Error connecting database\n");
 }
 });
 
 app.get("/",function(request,response){
 connection.query('SELECT * from info', function(err, rows, fields) {
-connection.end();
+  connection.end();
   if (!err){
     response.send(rows);
   }
   else
-    console.log('Error while performing Query.');
+    console.log('Error Query');
   });
 });
 
