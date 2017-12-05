@@ -20,8 +20,7 @@ if(!err) {
 });
 
 app.get("/",function(request,response){
-connection.query('SELECT * from info', function(err, rows, fields) {
-connection.end();
+connection.query('SELECT * from info', function(err, rows) {
   if (!err){
     response.send(rows);
   }
